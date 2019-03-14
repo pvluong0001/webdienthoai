@@ -5,7 +5,7 @@
 	if(isset($_POST['dangnhap'])) {
 		
 		$email=$_POST['email'];
-		$matkhau=$_POST['matkhau'];
+		$matkhau=md5($_POST['matkhau']);
 		$sql="select * from khachhang where email='$email' and matkhau='$matkhau'";
 		$row = mysqli_query($conn,$sql);
 		$result=mysqli_fetch_array($row,MYSQLI_ASSOC);

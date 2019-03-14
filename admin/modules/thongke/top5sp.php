@@ -68,30 +68,38 @@
 		}
 	}
  ?>
-<h2 style="text-align: center;padding-top: 10px;">TOP 5 SẢN PHẨM BÁN CHẠY</h2>
-<table style="width: 99%;text-align: center;">
-	<tr>
-		<td class="tt">STT</td>
-		<td class="tt">Tên sản phẩm</td>
-		<td class="tt">Hình ảnh</td>
-		<td class="tt" style="width: 159px;">Giá</td>
-		<td class="tt">Số lượng</td>
-	</tr>
-	<?php 
-		$i=0;
-		while ($dong_sp=mysqli_fetch_array($sp,MYSQLI_ASSOC)) {
-			$i++;
-	?>
-	<tr>
-		<td><?php echo $i; ?></td>
-		<td><?php echo $dong_sp['tensp'] ?></td>
-		<td>
-			<img src="../<?php echo $dong_sp['hinhanh']; ?>" alt="" style="width: 50px;height: 50px;">
-		</td>
-		<td><?php echo $dong_sp['gia'] ?></td>
-		<td><?php echo $dong_sp['soluong']; ?></td>
-	</tr>
-	<?php
-		}
-	 ?>
-</table>
+<div class="website-traffic-ctn" style="width: 100%">
+    <h2>TOP 5 SẢN PHẨM BÁN CHẠY</h2>
+    <div>
+        <table id="danh-sach-loai-san-pham" class="table table-striped dataTable" role="grid" aria-describedby="data-table-basic_info">
+            <thead>
+            <tr>
+                <td class="tt">STT</td>
+                <td class="tt">Tên sản phẩm</td>
+                <td class="tt">Hình ảnh</td>
+                <td class="tt" style="width: 159px;">Giá</td>
+                <td class="tt">Số lượng</td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $i=0;
+            while ($dong_sp=mysqli_fetch_array($sp,MYSQLI_ASSOC)) {
+                $i++;
+                ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $dong_sp['tensp'] ?></td>
+                    <td>
+                        <img src="../<?php echo $dong_sp['hinhanh']; ?>" alt="" style="width: 50px;height: 50px;">
+                    </td>
+                    <td><?php echo $dong_sp['gia'] ?></td>
+                    <td><?php echo $dong_sp['soluong']; ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>

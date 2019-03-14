@@ -1,5 +1,9 @@
 <div class="content">
-	<?php 
+	<?php
+        if(isset($_GET['ac']) && $_GET['ac'] == "logout") {
+            echo "<script>location.href='/admin/dangnhap.php'</script>";
+        }
+
 		if(isset($_GET['quanly'])){
 			$values=$_GET['quanly'];
 		}
@@ -17,7 +21,9 @@
 		}
 		elseif ($values=="thongke") {
 			include("modules/thongke/main.php");
-		}
+		} else {
+		    include("modules/dashboard.php");
+        }
 	 ?>
 </div>
 <div class="clear"></div>

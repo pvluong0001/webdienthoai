@@ -103,9 +103,10 @@
 
 
 			if (empty($emailErr)&&empty($hotenErr)&&empty($matkhauErr)&&empty($diachiErr)&&empty($dienthoaiErr)) {
-				$sql="insert into khachhang(email,tenkhach,matkhau,diachi,dienthoai) values('$_POST[email]','$_POST[hoten]','$_POST[matkhau]','$_POST[diachi]','$_POST[dienthoai]')";
+				$sql="insert into khachhang(email,tenkhach,matkhau,diachi,dienthoai) values('" . $_POST["email"] . "','$hoten','" . md5($matkhau) . "','$diachi','$dienthoai')";
+
 				mysqli_query($conn,$sql);
-				echo "<script>alert('Đăng ký thành công.Vui lòng đăng nhập!')</script>";
+				echo "<script>alert('Đăng ký thành công.Vui lòng đăng nhập!');location.href='/dangnhap.php'</script>";
 				//header("location: ../dangnhap.php");
 			}
 		}

@@ -1,4 +1,4 @@
-<div>
+<div class="content">
 	<div style ="font-weight: bold;font-size: 20px;color: #544e9b;border-bottom: 2px solid #4ca7d6;padding: 10px;margin-top: 0;margin-bottom: 10px;">Hướng dẫn mua hàng</div>
 	<div class="huongdan" style ="padding: 0 10px 10px 10px;font-size: 16px;">
 		<p><strong>Bước 1:</strong>&nbsp;Truy cập website và lựa chọn sản phẩm cần mua để mua hàng</p>

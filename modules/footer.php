@@ -1,3 +1,3 @@
-﻿<div class="footer">
-	Copyright © 2019 | Design by Nguyễn Văn Quyết
+﻿<div class="copy_right">
+    <p>&copy; 2013 home_shoppe. All rights reserved | Design by ABC</p>
 </div>

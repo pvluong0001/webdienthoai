@@ -1,6 +1,6 @@
 <div class="menu">
 	<div class="submenu">
-		<a href="../index.php">
+		<a href="../index2.php">
 			<img src="images/trangchu.png" alt="">
 			<p>Trang chủ</p>
 		</a>

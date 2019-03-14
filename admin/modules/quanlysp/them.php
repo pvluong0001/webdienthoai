@@ -1,70 +1,65 @@
 <?php include("modules/editor/editor1.php") ?>
 <form action="modules/quanlysp/xuly.php" method="POST" enctype="multipart/form-data">
-	<table width="95%" style="margin: auto;margin-top: 10px;">
-		<tr>
-			<td colspan="2">
-				<div align="center"><h2 style="font-weight: bold;">Thêm sản phẩm</h2></div>
-			</td>
-		</tr>
-		<tr>
-			<td>Tên sp</td>
-			<td><input type="text" name="tensp" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td>Giá</td>
-			<td><input type="text" name="gia" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td>Bảo hành</td>
-			<td><input type="text" name="baohanh" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td>Số lượng</td>
-			<td><input type="text" name="soluong" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td>Hình ảnh</td>
-			<td><input type="file" name="hinhanh" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td>Mô tả sp</td>
-			<td>
-				<textarea name="mota" cols="40" rows="40">
-					
-				</textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>Loại sp</td>
-			<?php 
-				$sql="select * from loaisp";
-				$loaisp=mysqli_query($conn,$sql);
-		 	?>
-			<td>
-				<select name="id_loaisp" id="">
-					<?php 
-						while($dong_loaisp=mysqli_fetch_array($loaisp,MYSQLI_ASSOC)){
-					 ?>
-					<option value="<?php echo $dong_loaisp['id_loaisp'] ?>">
-						<?php echo $dong_loaisp['tenloaisp'] ?>
-					</option>
-					<?php 
-						}
-		 			?>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>Thứ tự</td>
-			<td><input type="text" name="thutu" value="" placeholder="" style="width: 250px; height: 30px"></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<div align="center">
-					<input type="submit" name="themsp" value="Thêm" style="width: 85px;height: 35px">
-					<input type="submit" name="boqua" value="Bỏ qua" style="width: 85px;height: 35px">
-				</div>
-			</td>
-		</tr>
-	</table>
+    <div class="form-group">
+        <div class="nk-int-st">
+            <input type="text" name="tensp" class="form-control input-lg" placeholder="Tên sản phẩm">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="nk-int-st">
+            <input type="number" name="gia" class="form-control input-lg" placeholder="Giá">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="nk-int-st">
+            <input type="text" name="baohanh" class="form-control input-lg" placeholder="Bảo hành">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="nk-int-st">
+            <input type="text" name="soluong" class="form-control input-lg" placeholder="Số lượng">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Hình ảnh</label><br>
+        <div class="nk-int-st">
+            <input type="file" name="hinhanh" class="form-control input-lg" placeholder="Hình ảnh">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Mô tả</label><br>
+        <div class="nk-int-st">
+            <textarea name="mota" class="form-control" style="width: 100%" cols="40" rows="30"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">̉Loại sản phẩm</label><br>
+        <div class="nk-int-st">
+            <?php
+            $sql="select * from loaisp";
+            $loaisp=mysqli_query($conn,$sql);
+            ?>
+            <select name="id_loaisp" class="form-control" id="">
+                <?php
+                while($dong_loaisp=mysqli_fetch_array($loaisp,MYSQLI_ASSOC)){
+                    ?>
+                    <option value="<?php echo $dong_loaisp['id_loaisp'] ?>">
+                    <?php echo $dong_loaisp['tenloaisp'] ?>
+                </option>
+                    <?php
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="nk-int-st">
+            <input type="number" name="thutu" class="form-control input-lg" placeholder="Thứ tụ">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <a href="/admin/index.php" class="btn btn-default notika-btn-default waves-effect pull-right" style="margin-left: 10px">Hủy</a>
+        <button type="submit" name="themsp" class="btn btn-success notika-btn-success waves-effect pull-right">Thêm</button>
+    </div>
 </form>
